@@ -1,0 +1,24 @@
+{
+  "name": "ownVideogular",
+  "version": "0.0.0",
+  "authors": [
+    "ronfe <chihungfei@126.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "videogular": "~1.2.4",
+    "videogular-controls": "~1.2.4",
+    "videogular-buffering": "~1.2.4",
+    "lodash": "~3.10.0",
+    "videogular-cuepoints": "~2.0.0",
+    "bootstrap": "~3.3.5",
+    "videogular-overlay-play": "~1.2.4"
+  }
+}

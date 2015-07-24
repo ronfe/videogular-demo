@@ -1,0 +1,95 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.choice-btn {
+    height: 10%;
+    width: 10%;
+    text-align: center;
+    margin: 45% 5% 0 5%;
+    font-size: 3em !important;
+    line-height: 1em !important;
+}
+
+
+#video-controls {
+    z-index: 99;
+}
+
+#wi-panel {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+.videogular-container {
+    width: 100%;
+    height: 320px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.iconbtn {
+    display: table-cell;
+    width: 10em;
+    margin-right: 0;
+    padding-top: 0.8em;
+    padding-left: 1.2em;
+}
+
+.try-layer {
+    background-color: transparent;
+    z-index: 98;
+    width: 100%;
+    height: 90%;
+    position: absolute;
+}
+
+.video-container {
+    width: 1080px;
+    height: auto;
+    margin-top: 180px;
+    margin-left: 180px;
+    border: dashed;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .videogular-container {
+        width: 1170px;
+        height: 658.125px;
+    }
+
+    .videogular-container.audio {
+        width: 1170px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .videogular-container {
+        width: 940px;
+        height: 528.75px;
+    }
+
+    .videogular-container.audio {
+        width: 940px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .videogular-container {
+        width: 728px;
+        height: 409.5px;
+    }
+
+    .videogular-container.audio {
+        width: 728px;
+        height: 50px;
+    }
+}
+
+/*# sourceMappingURL=main.css.map */

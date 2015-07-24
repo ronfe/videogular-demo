@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Try videogular</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div ng-app="myApp" class="video-container">
+            <div ng-controller="HomeCtrl as controller">
+                <videogular vg-player-ready="controller.onPlayerReady($API)"
+                            vg-theme="controller.config.theme.url"
+                            vg-cue-points="controller.config.cuePoints">
+                    <div class="try-layer" ng-show="controller.API.currentState === 'pause' && controller.config.cuePoints.timePoint[controller.config.finishedHyperIndex].params.here">
+                        <div class="btn btn-default choice-btn" ng-repeat="choice in controller.config.cuePoints.timePoint[controller.config.finishedHyperIndex].params.choices"
+                             ng-show="controller.config.cuePoints.timePoint[controller.config.finishedHyperIndex].params.here"
+                             ng-click="controller.jump(choice)">{{choice.body}}
+                        </div>
+                    </div>
+                    <div class="try-layer" ng-show="controller.API.currentState === 'pause' && controller.config.cuePoints.timePoint[controller.config.finishedHyperIndex].params.type === 'wi' && controller.config.cuePoints.timePoint[controller.config.finishedHyperIndex].params.wiHere">
+                        <div id='wi-panel' class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">鞏固題</h3>
+                            </div>
+                            <div class="panel-body">
+                                <span ng-repeat="problem in controller.config.cuePoints.timePoint[controller.config.finishedHyperIndex].params.problems">
+                                    {{problem.body}}
+                                </span>
+                                <div class="btn btn-lg" ng-click="controller.wiJump()">繼續</div>
+                            </div>
+                        </div>
+                    </div>
+                    <vg-media vg-src="controller.config.sources"></vg-media>
+                    <vg-controls id="video-controls" vg-autohide="controller.config.plugins.controls.autoHide" vg-autohide-time="controller.config.plugins.controls.autoHideTime">
+                        <div class="iconbtn">
+                            <img src="logobeta.png">
+                        </div>
+                        <vg-play-pause-button></vg-play-pause-button>
+                        <vg-time-display>{{ currentTime | date:'mm:ss'}}</vg-time-display>
+                        <vg-scrub-bar>
+                            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                            <vg-cuepoints vg-cuepoints-config="controller.config.plugins.cuepoints" vg-cuepoints-theme="controller.config.plugins.cuepoints.theme.url"></vg-cuepoints>
+                        </vg-scrub-bar>
+                        <vg-volume>
+                            <vg-mute-button></vg-mute-button>
+                            <vg-volume-bar></vg-volume-bar>
+                        </vg-volume>
+                        <vg-fullscreen-button></vg-fullscreen-button>
+                    </vg-controls>
+                    <vg-buffering></vg-buffering>
+
+                </videogular>
+            </div>
+        </div>
+        <script src="data.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/videogular/videogular.js"></script>
+        <script src="bower_components/videogular-controls/vg-controls.min.js"></script>
+        <script src="bower_components/videogular-buffering/vg-buffering.min.js"></script>
+        <script src="bower_components/videogular-cuepoints/cuepoints.js"></script>
+        <script src="bower_components/lodash/lodash.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
